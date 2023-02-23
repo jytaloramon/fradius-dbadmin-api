@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace fradius_dbadmin_api.Controllers;
+namespace FradiusDbAdminApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]

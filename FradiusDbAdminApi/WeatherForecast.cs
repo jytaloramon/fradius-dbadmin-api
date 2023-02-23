@@ -1,4 +1,4 @@
-namespace fradius_dbadmin_api;
+namespace FradiusDbAdminApi;
 
 public class WeatherForecast
 {
