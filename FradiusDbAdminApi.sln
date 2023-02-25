@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FradiusDbAdminApi", "src\Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FradiusDomain", "src\FradiusDomain\FradiusDomain.csproj", "{119DF24A-ED5F-444E-8C7F-7F66E7D6F54C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2045DB43-8122-4343-9818-D247FD2A8D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FradiusDomainUnitTests", "tests\FradiusDomainUnitTests\FradiusDomainUnitTests.csproj", "{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{119DF24A-ED5F-444E-8C7F-7F66E7D6F54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119DF24A-ED5F-444E-8C7F-7F66E7D6F54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119DF24A-ED5F-444E-8C7F-7F66E7D6F54C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B7915CA3-0423-4B1F-8204-5B9151BE44DB} = {379002D1-F999-41D8-8348-51BAFE04C9C5}
 		{119DF24A-ED5F-444E-8C7F-7F66E7D6F54C} = {379002D1-F999-41D8-8348-51BAFE04C9C5}
+		{8E35B5EA-A99E-4E4A-AF7A-2F9F92A8E078} = {2045DB43-8122-4343-9818-D247FD2A8D13}
 	EndGlobalSection
 EndGlobal
