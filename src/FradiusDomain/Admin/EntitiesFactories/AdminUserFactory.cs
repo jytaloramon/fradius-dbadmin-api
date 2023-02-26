@@ -15,7 +15,7 @@ public class AdminUserFactory : IAdminUserFactory
     }
 
     public AdminUser Create(string fistName, string lastName, string username, string password, string email,
-        string? profileImage)
+        string? profileImage, bool isActive)
     {
         var adminUser = new AdminUser
         {
@@ -24,7 +24,8 @@ public class AdminUserFactory : IAdminUserFactory
             Username = username,
             Password = password,
             Email = email,
-            ProfileImage = string.IsNullOrEmpty(profileImage) ? null : profileImage
+            ProfileImage = string.IsNullOrEmpty(profileImage) ? null : profileImage,
+            IsActive = isActive
         };
 
         var result = _validator.Validate(adminUser);

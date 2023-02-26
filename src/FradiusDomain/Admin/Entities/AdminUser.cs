@@ -15,4 +15,10 @@ public class AdminUser
     public string Password { get; set; } = "";
 
     public string? ProfileImage { get; set; }
+    
+    public DateTime CreateAt { get; set; }
+    
+    public DateTime UpdateAt { get; set; }
+    
+    public bool IsActive { get; set; }
 }

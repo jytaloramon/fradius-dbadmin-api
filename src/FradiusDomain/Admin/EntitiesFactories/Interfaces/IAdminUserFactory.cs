@@ -13,5 +13,5 @@ public interface IAdminUserFactory
      * </exception>
      */
     public AdminUser Create(string fistName, string lastName, string username, string password, string email,
-        string? profileImage);
+        string? profileImage, bool isActive);
 }

@@ -8,10 +8,10 @@ namespace FradiusDomainUnitTests.Admin.EntitiesFactories;
 public class AdminUserFactoryUnitTests
 {
     [Theory]
-    [InlineData("Mike", "Ross", "mikeusername", "15235346", "mike@ross", "")]
-    [InlineData("Mike", "Ross", "mikeusername", "15235346", "mike@ross", null)]
+    [InlineData("Mike", "Ross", "mikeusername", "15235346", "mike@ross", "", true)]
+    [InlineData("Mike", "Ross", "mikeusername", "15235346", "mike@ross", null, false)]
     public void ValidCreate(string fistName, string lastName, string username, string password,
-        string email, string? profileImage)
+        string email, string? profileImage, bool isActive)
     {
         var validator = new InlineValidator<AdminUser>();
         validator.RuleFor(admin => admin.FirstName).Must(fistName => true);
@@ -22,17 +22,18 @@ public class AdminUserFactoryUnitTests
         validator.RuleFor(admin => admin.ProfileImage).Must(profileImage => true);
 
         var factory = new AdminUserFactory(validator);
-        var adminUser = factory.Create(fistName, lastName, username, password, email, profileImage);
+        var adminUser = factory.Create(fistName, lastName, username, password, email, profileImage, isActive);
 
         Assert.Equal(
             new List<object>()
             {
-                fistName, lastName, username, password, email, string.IsNullOrEmpty(profileImage) ? null : profileImage
+                fistName, lastName, username, password, email, string.IsNullOrEmpty(profileImage) ? null : profileImage,
+                isActive
             },
             new List<object>()
             {
                 adminUser.FirstName, adminUser.LastName, adminUser.Username, adminUser.Password, adminUser.Email,
-                adminUser.ProfileImage,
+                adminUser.ProfileImage, adminUser.IsActive
             });
     }
 
@@ -49,7 +50,13 @@ public class AdminUserFactoryUnitTests
 
         var factory = new AdminUserFactory(validator);
 
-        var exception = Assert.Throws<EntityValidationException>(() => { factory.Create("", "", "", "", "", ""); });
+        var exception =
+            Assert.Throws<EntityValidationException>(
+                () =>
+                {
+                    factory.Create("", "", "", "", "",
+                        "", true);
+                });
 
         Assert.Equal(6, exception.Errors.Count);
     }
