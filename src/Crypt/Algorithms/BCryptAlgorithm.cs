@@ -2,13 +2,13 @@ namespace Crypt.Algorithms;
 
 public static class BCryptAlgorithm
 {
-    public static string GetHashPassword(string password)
+    public static string GenHash(string content)
     {
-        return BCrypt.Net.BCrypt.HashPassword(password);
+        return BCrypt.Net.BCrypt.HashPassword(content);
     }
 
-    public static bool IsEqual(string password, string hash)
+    public static bool Compare(string content, string hash)
     {
-        return BCrypt.Net.BCrypt.Verify(password, hash);
+        return BCrypt.Net.BCrypt.Verify(content, hash);
     }
 }
