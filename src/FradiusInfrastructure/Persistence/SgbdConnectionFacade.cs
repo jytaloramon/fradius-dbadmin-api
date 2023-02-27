@@ -26,4 +26,14 @@ public static class SgbdConnectionFacade
             return null;
         };
     }
+
+    public static Func<DbContextOptionsBuilder, Action?> Psql(string host, string user, string password, string dbName,
+        Version version)
+    {
+        return builder =>
+        {
+            builder.UseNpgsql($"Host={host};Username={user};Password={password};Database={dbName}");
+            return null;
+        };
+    }
 }
