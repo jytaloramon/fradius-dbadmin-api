@@ -27,8 +27,7 @@ public static class SgbdConnectionFacade
         };
     }
 
-    public static Func<DbContextOptionsBuilder, Action?> Psql(string host, string user, string password, string dbName,
-        Version version)
+    public static Func<DbContextOptionsBuilder, Action?> Psql(string host, string user, string password, string dbName)
     {
         return builder =>
         {
