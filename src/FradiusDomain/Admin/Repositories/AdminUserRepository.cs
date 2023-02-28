@@ -1,9 +1,8 @@
-using CommonDomain.Persistence;
 using CommonDomain.Persistence.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories.Interfaces;
-using FradiusDomain.Common.Persistence;
 using FradiusDomain.Common.Persistence.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace FradiusDomain.Admin.Repositories;
 
@@ -16,18 +15,25 @@ public class AdminUserRepository : IAdminUserRepository
         _persistence = persistence;
     }
 
-    public Task<AdminUser?> GetById(int id)
+    public async Task<AdminUser?> GetById(int id)
     {
-        throw new NotImplementedException();
+        await using var db = _persistence.GetRepositoryData();
+
+        return await db.AdminUsers.FindAsync(id);
     }
 
-    public Task<List<AdminUser>> GetAll()
+    public async Task<List<AdminUser>> GetAll()
     {
-        throw new NotImplementedException();
+        await using var db = _persistence.GetRepositoryData();
+
+        return await db.AdminUsers.ToListAsync();
     }
 
-    public Task Insert(AdminUser t)
+    public async Task Insert(AdminUser adminUser)
     {
-        throw new NotImplementedException();
+        await using var db = _persistence.GetRepositoryData();
+
+        db.AdminUsers.Add(adminUser);
+        await db.SaveChangesAsync();
     }
 }
