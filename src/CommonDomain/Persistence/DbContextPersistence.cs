@@ -1,20 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusInfrastructure.Persistence;
+namespace CommonDomain.Persistence;
 
-public class FradiusDbConnection : DbContext
+public abstract class DbContextPersistence : DbContext
 {
     private readonly Func<DbContextOptionsBuilder, Action?> _configOptionsBuilder;
     private readonly Func<ModelBuilder, Action?>? _configModelBuilder;
 
-    public FradiusDbConnection(Func<DbContextOptionsBuilder, Action?> configOptionsBuilder)
+    protected DbContextPersistence(Func<DbContextOptionsBuilder, Action?> configOptionsBuilder)
     {
         _configOptionsBuilder = configOptionsBuilder;
-        _configModelBuilder = null;
     }
 
-    public FradiusDbConnection(Func<DbContextOptionsBuilder, Action?> configOptionsBuilder,
-        Func<ModelBuilder, Action?> configModelBuilder)
+    protected DbContextPersistence(Func<DbContextOptionsBuilder, Action?> configOptionsBuilder,
+        Func<ModelBuilder, Action?>? configModelBuilder)
     {
         _configOptionsBuilder = configOptionsBuilder;
         _configModelBuilder = configModelBuilder;
