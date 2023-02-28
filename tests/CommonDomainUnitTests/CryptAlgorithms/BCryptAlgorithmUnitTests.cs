@@ -1,7 +1,6 @@
-using System.Text.RegularExpressions;
-using Crypt.Algorithms;
+using CommonDomain.CryptAlgorithms;
 
-namespace CryptUnitTests.Algorithms;
+namespace CommonDomainUnitTests.CryptAlgorithms;
 
 public class BCryptAlgorithmUnitTests
 {

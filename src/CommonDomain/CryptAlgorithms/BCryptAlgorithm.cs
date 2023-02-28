@@ -1,4 +1,4 @@
-namespace Crypt.Algorithms;
+namespace CommonDomain.CryptAlgorithms;
 
 public static class BCryptAlgorithm
 {
