@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommonDomain\CommonDomain.csproj" />
     <ProjectReference Include="..\FradiusInfrastructure\FradiusInfrastructure.csproj" />
   </ItemGroup>
 
