@@ -1,4 +1,4 @@
-namespace FradiusDomain.Common.Repository;
+namespace CommonDomain.Repository;
 
 public interface IReadRepository<T>
 {
