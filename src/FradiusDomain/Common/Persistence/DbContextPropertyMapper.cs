@@ -1,9 +1,9 @@
 using FradiusDomain.Admin.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusDomain.Common.Repository;
+namespace FradiusDomain.Common.Persistence;
 
-public static class PropertyMapperRepository
+public static class DbContextPropertyMapper
 {
     public static Func<ModelBuilder, Action?> Mapper()
     {
@@ -23,7 +23,7 @@ public static class PropertyMapperRepository
                 builder.Property(a => a.UpdateAt).HasColumnName("admu_update_at").ValueGeneratedOnAddOrUpdate();
                 builder.Property(a => a.IsActive).HasColumnName("admu_is_active");
             });
-            
+
             return null;
         };
     }
