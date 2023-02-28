@@ -1,15 +1,17 @@
 using CommonDomain.Persistence;
+using CommonDomain.Persistence.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories.Interfaces;
 using FradiusDomain.Common.Persistence;
+using FradiusDomain.Common.Persistence.Repository;
 
 namespace FradiusDomain.Admin.Repositories;
 
 public class AdminUserRepository : IAdminUserRepository
 {
-    private readonly DataPersistence<FradiusDbContextPersistence> _persistence;
+    private readonly IDataPersistence<FradiusDbContextPersistence> _persistence;
 
-    public AdminUserRepository(DataPersistence<FradiusDbContextPersistence> persistence)
+    public AdminUserRepository(IDataPersistence<FradiusDbContextPersistence> persistence)
     {
         _persistence = persistence;
     }
