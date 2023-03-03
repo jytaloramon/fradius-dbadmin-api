@@ -1,7 +1,7 @@
-using FradiusInfrastructure.Persistence.Sgbds.Interfaces;
+using FradiusInfrastructure.Persistence.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusInfrastructure.Persistence.Sgbds;
+namespace FradiusInfrastructure.Persistence;
 
 public class MariaDbSgbd : Sgbd, ISgbd
 {

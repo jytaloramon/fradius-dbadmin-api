@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusInfrastructure.Persistence.Sgbds.Interfaces;
+namespace FradiusInfrastructure.Persistence.Interfaces;
 
 public interface ISgbd
 {

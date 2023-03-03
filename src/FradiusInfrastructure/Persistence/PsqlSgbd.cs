@@ -1,7 +1,7 @@
-using FradiusInfrastructure.Persistence.Sgbds.Interfaces;
+using FradiusInfrastructure.Persistence.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusInfrastructure.Persistence.Sgbds;
+namespace FradiusInfrastructure.Persistence;
 
 public class PsqlSgbd : Sgbd, ISgbd
 {
@@ -19,7 +19,7 @@ public class PsqlSgbd : Sgbd, ISgbd
     {
         return builder =>
         {
-            builder.UseNpgsql($"Host={Host};Port:{Port};Username={User};Password={Password};Database={DbName}");
+            builder.UseNpgsql($"Host={Host};Port={Port};Username={User};Password={Password};Database={DbName}");
             return null;
         };
     }

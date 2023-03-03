@@ -1,4 +1,4 @@
-namespace FradiusInfrastructure.Persistence.Sgbds;
+namespace FradiusInfrastructure.Persistence;
 
 public abstract class Sgbd
 {
