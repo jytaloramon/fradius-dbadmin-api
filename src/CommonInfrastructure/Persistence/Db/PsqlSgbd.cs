@@ -1,7 +1,7 @@
-using FradiusInfrastructure.Persistence.Interfaces;
+using Infrastructure.Persistence.Db.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace FradiusInfrastructure.Persistence;
+namespace Infrastructure.Persistence.Db;
 
 public class PsqlSgbd : Sgbd, ISgbd
 {
