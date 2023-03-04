@@ -1,13 +1,10 @@
+using Infrastructure.Persistence.Exceptions.Entities;
+
 namespace Infrastructure.Persistence.Exceptions.IntegrityConstraint;
 
-public class KeyConstraintViolation : ConstraintViolation
+public class KeyConstraintViolation : SgbdException
 {
-    public KeyConstraintViolation(IDictionary<string, string[]> errors) : base(errors)
-    {
-    }
-
-    public KeyConstraintViolation(IDictionary<string, string[]> errors, Exception? innerException)
-        : base(errors, innerException)
+    public KeyConstraintViolation(string property, string message) : base(property, message)
     {
     }
 }
