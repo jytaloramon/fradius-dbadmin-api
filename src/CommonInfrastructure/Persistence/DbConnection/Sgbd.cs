@@ -1,4 +1,4 @@
-namespace Infrastructure.Persistence.Db;
+namespace Infrastructure.Persistence.DbConnection;
 
 public abstract class Sgbd
 {
