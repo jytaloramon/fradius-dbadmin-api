@@ -1,5 +1,5 @@
-using CommonDomain.Persistence;
 using FradiusDomain.Admin.Entities;
+using Infrastructure.Persistence.Db;
 using Microsoft.EntityFrameworkCore;
 
 namespace FradiusDomain.Common.Persistence.Repository;
