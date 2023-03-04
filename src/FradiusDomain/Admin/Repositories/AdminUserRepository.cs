@@ -1,8 +1,7 @@
-using CommonDomain.Persistence.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories.Interfaces;
 using FradiusDomain.Common.Persistence.Repository;
-using Microsoft.EntityFrameworkCore;
+using Infrastructure.Persistence.Db.Interfaces;
 
 namespace FradiusDomain.Admin.Repositories;
 
@@ -15,25 +14,46 @@ public class AdminUserRepository : IAdminUserRepository
         _persistence = persistence;
     }
 
-    public async Task<AdminUser?> GetById(int id)
+    public AdminUser? GetById(int id)
     {
-        await using var db = _persistence.GetRepositoryData();
+        try
+        {
+            using var db = _persistence.GetRepositoryData();
 
-        return await db.AdminUsers.FindAsync(id);
+            return db.AdminUsers.Find(id);
+        }
+        catch (Exception e)
+        {
+            throw _persistence.HandlerException(e);
+        }
     }
 
-    public async Task<List<AdminUser>> GetAll()
+    public List<AdminUser> GetAll()
     {
-        await using var db = _persistence.GetRepositoryData();
+        try
+        {
+            using var db = _persistence.GetRepositoryData();
 
-        return await db.AdminUsers.ToListAsync();
+            return db.AdminUsers.ToList();
+        }
+        catch (Exception e)
+        {
+            throw _persistence.HandlerException(e);
+        }
     }
 
-    public async Task Insert(AdminUser adminUser)
+    public int Insert(AdminUser adminUser)
     {
-        await using var db = _persistence.GetRepositoryData();
+        try
+        {
+            using var db = _persistence.GetRepositoryData();
 
-        db.AdminUsers.Add(adminUser);
-        await db.SaveChangesAsync();
+            db.AdminUsers.Add(adminUser);
+            return db.SaveChanges();
+        }
+        catch (Exception e)
+        {
+            throw _persistence.HandlerException(e);
+        }
     }
 }
