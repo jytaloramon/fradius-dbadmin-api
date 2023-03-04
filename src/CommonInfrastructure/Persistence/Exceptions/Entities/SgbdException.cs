@@ -1,10 +1,14 @@
 namespace Infrastructure.Persistence.Exceptions.Entities;
 
-public abstract class SgbdException : Exception
+public class SgbdException : Exception
 {
-    protected SgbdException(string property, string message) : base(message)
+    public SgbdException(string property, string message) : base(message)
     {
         Property = property;
+    }
+
+    public SgbdException(string property, string? message, Exception? innerException) : base(message, innerException)
+    {
     }
 
     public string Property { get; init; }
