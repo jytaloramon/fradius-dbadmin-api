@@ -1,5 +1,5 @@
-using CommonDomain.Persistence;
-using FradiusInfrastructure.Persistence.Sgbds;
+using Infrastructure.Persistence.Db;
+using Infrastructure.Persistence.DbConnection;
 
 namespace FradiusMigration;
 
