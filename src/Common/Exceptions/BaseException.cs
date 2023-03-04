@@ -1,6 +1,6 @@
 namespace Common.Exceptions;
 
-public abstract class BaseException : Exception
+public class BaseException : Exception
 {
     public BaseException(IDictionary<string, string[]> errors)
     {
