@@ -1,6 +1,6 @@
 using FradiusDomain.Common.Persistence;
-using Infrastructure.Persistence.DbConnection;
-using Infrastructure.Persistence.Exceptions.Factories;
+using CommonInfrastructure.Persistence.DbConnection;
+using CommonInfrastructure.Persistence.Exceptions.Factories;
 
 namespace FradiusDomainUnitTests.CommonUtils;
 

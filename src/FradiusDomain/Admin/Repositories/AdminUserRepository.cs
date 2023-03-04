@@ -1,7 +1,7 @@
+using CommonInfrastructure.Persistence.Db.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories.Interfaces;
 using FradiusDomain.Common.Persistence.Repository;
-using Infrastructure.Persistence.Db.Interfaces;
 
 namespace FradiusDomain.Admin.Repositories;
 

@@ -1,5 +1,5 @@
-using Infrastructure.Persistence.Db;
-using Infrastructure.Persistence.DbConnection;
+using CommonInfrastructure.Persistence.Db;
+using CommonInfrastructure.Persistence.DbConnection;
 
 namespace FradiusMigration;
 

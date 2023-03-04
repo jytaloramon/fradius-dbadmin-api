@@ -1,6 +1,6 @@
-using Infrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
 
-namespace Infrastructure.Persistence.Db.Interfaces;
+namespace CommonInfrastructure.Persistence.Db.Interfaces;
 
 public interface IDataPersistence<out T>
 {

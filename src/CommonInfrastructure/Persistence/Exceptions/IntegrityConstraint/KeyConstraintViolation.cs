@@ -1,6 +1,6 @@
-using Infrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
 
-namespace Infrastructure.Persistence.Exceptions.IntegrityConstraint;
+namespace CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 
 public class KeyConstraintViolation : SgbdException
 {

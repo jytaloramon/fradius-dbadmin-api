@@ -1,8 +1,7 @@
-using Infrastructure.Persistence.Db;
-using Infrastructure.Persistence.Db.Interfaces;
+using CommonInfrastructure.Persistence.DbConnection.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Persistence.DbConnection;
+namespace CommonInfrastructure.Persistence.DbConnection;
 
 public class MariaDbSgbd : Sgbd, ISgbd
 {

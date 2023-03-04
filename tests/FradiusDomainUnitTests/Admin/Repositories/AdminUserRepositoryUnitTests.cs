@@ -1,7 +1,7 @@
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories;
 using FradiusDomainUnitTests.CommonUtils;
-using Infrastructure.Persistence.Exceptions.IntegrityConstraint;
+using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 
 namespace FradiusDomainUnitTests.Admin.Repositories;
 

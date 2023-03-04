@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Persistence.Db.Interfaces;
+namespace CommonInfrastructure.Persistence.DbConnection.Interfaces;
 
 public interface ISgbd
 {

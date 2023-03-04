@@ -1,4 +1,4 @@
-namespace Infrastructure.Persistence.Exceptions.Entities;
+namespace CommonInfrastructure.Persistence.Exceptions.Entities;
 
 public class SgbdException : Exception
 {

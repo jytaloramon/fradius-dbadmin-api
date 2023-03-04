@@ -1,6 +1,6 @@
-using Infrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
 
-namespace Infrastructure.Persistence.Exceptions.Factories.Interfaces;
+namespace CommonInfrastructure.Persistence.Exceptions.Factories.Interfaces;
 
 public interface ISgbdExceptionFactory
 {

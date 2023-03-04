@@ -1,8 +1,9 @@
+using CommonInfrastructure.Persistence.Db.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Common.Persistence.Repository;
-using Infrastructure.Persistence.Db.Interfaces;
-using Infrastructure.Persistence.Exceptions.Entities;
-using Infrastructure.Persistence.Exceptions.Factories.Interfaces;
+using CommonInfrastructure.Persistence.DbConnection.Interfaces;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Factories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FradiusDomain.Common.Persistence;

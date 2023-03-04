@@ -1,8 +1,6 @@
-using Infrastructure.Persistence.Db;
-using Infrastructure.Persistence.Db.Interfaces;
+using CommonInfrastructure.Persistence.DbConnection;
+using CommonInfrastructure.Persistence.DbConnection.Interfaces;
 using Microsoft.EntityFrameworkCore;
-
-namespace Infrastructure.Persistence.DbConnection;
 
 public class MysqlSgbd : Sgbd, ISgbd
 {

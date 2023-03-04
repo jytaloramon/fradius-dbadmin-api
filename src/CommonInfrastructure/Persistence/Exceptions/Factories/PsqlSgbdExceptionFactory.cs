@@ -1,9 +1,9 @@
-using Infrastructure.Persistence.Exceptions.Entities;
-using Infrastructure.Persistence.Exceptions.Factories.Interfaces;
-using Infrastructure.Persistence.Exceptions.IntegrityConstraint;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Factories.Interfaces;
+using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 using Npgsql;
 
-namespace Infrastructure.Persistence.Exceptions.Factories;
+namespace CommonInfrastructure.Persistence.Exceptions.Factories;
 
 public class PsqlSgbdExceptionFactory : ISgbdExceptionFactory
 {

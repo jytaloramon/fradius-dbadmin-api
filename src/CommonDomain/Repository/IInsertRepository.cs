@@ -1,4 +1,4 @@
-using Infrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions.Entities;
 
 
 namespace CommonDomain.Repository;
