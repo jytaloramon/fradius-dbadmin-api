@@ -102,6 +102,19 @@ public class AdminUserRepositoryUnitTests
         Assert.Equal("Email", actualException.Property);
     }
 
+    [Fact]
+    public void GetAll_AddEntity_ReturnListGreaterThanZero()
+    {
+        var text = "temp" + GenerateTestId.GenInt(GenerateTestId.IntMax);
+
+        var newUser = CreateAdminUser(text);
+        _repository.Insert(newUser);
+
+        var actual = _repository.GetAll();
+
+        Assert.True(actual.Count > 0);
+    }
+
     [Theory]
     [InlineData("Mary")]
     [InlineData("Mike")]
