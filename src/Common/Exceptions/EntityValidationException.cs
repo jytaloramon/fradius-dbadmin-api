@@ -1,11 +1,12 @@
 namespace Common.Exceptions;
 
-public class EntityValidationException : Exception
+public class EntityValidationException : BaseException
 {
-    public EntityValidationException(IDictionary<string, string[]> errors) : base()
+    public EntityValidationException(IDictionary<string, string[]> errors) : base(errors)
     {
-        Errors = errors;
     }
 
-    public IDictionary<string, string[]> Errors { get; init; }
+    public EntityValidationException(IDictionary<string, string[]> errors, Exception? innerException) : base(errors, innerException)
+    {
+    }
 }
