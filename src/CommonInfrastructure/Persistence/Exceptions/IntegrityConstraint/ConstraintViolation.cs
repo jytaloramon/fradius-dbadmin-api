@@ -1,5 +1,3 @@
-using CommonInfrastructure.Persistence.Exceptions.Entities;
-
 namespace CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 
 public class ConstraintViolation : SgbdException

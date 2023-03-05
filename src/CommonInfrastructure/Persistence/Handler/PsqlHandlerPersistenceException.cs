@@ -1,4 +1,4 @@
-using CommonInfrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions;
 using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 using CommonInfrastructure.Persistence.Handler.Interfaces;
 using Npgsql;

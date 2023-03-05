@@ -2,7 +2,7 @@ using CommonInfrastructure.Persistence.Db.Interfaces;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Common.Persistence.Repository;
 using CommonInfrastructure.Persistence.DbConnection.Interfaces;
-using CommonInfrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions;
 using CommonInfrastructure.Persistence.Handler.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,4 @@
-namespace CommonInfrastructure.Persistence.Exceptions.Entities;
+namespace CommonInfrastructure.Persistence.Exceptions;
 
 public class SgbdException : Exception
 {
@@ -9,6 +9,7 @@ public class SgbdException : Exception
 
     public SgbdException(string property, string? message, Exception? innerException) : base(message, innerException)
     {
+        Property = property;
     }
 
     public string Property { get; init; }

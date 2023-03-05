@@ -1,4 +1,4 @@
-using CommonInfrastructure.Persistence.Exceptions.Entities;
+using CommonInfrastructure.Persistence.Exceptions;
 
 namespace CommonInfrastructure.Persistence.Handler.Interfaces;
 
