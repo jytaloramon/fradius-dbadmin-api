@@ -72,7 +72,7 @@ public class AdminUserRepositoryUnitTests
         var newUserUsernameDuplicate = CreateAdminUser(newText);
         newUserUsernameDuplicate.Email = text + GenerateTestId.GenLong(GenerateTestId.LongMax);
 
-        var actualException = Assert.Throws<ConstraintViolation>(() =>
+        var actualException = Assert.Throws<ConstraintViolationSgbdException>(() =>
         {
             _repository.Insert(newUserUsernameDuplicate);
         });
@@ -95,7 +95,7 @@ public class AdminUserRepositoryUnitTests
         var newUserUsernameDuplicate = CreateAdminUser(newText);
         newUserUsernameDuplicate.Username = text + GenerateTestId.GenLong(GenerateTestId.LongMax);
 
-        var actualException = Assert.Throws<ConstraintViolation>(() =>
+        var actualException = Assert.Throws<ConstraintViolationSgbdException>(() =>
         {
             _repository.Insert(newUserUsernameDuplicate);
         });

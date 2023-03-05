@@ -21,7 +21,10 @@ public class PsqlHandlerPersistenceException : IHandlerPersistenceException
 
         return psqlException.SqlState switch
         {
-            "23505" => new UniqueConstraintViolation(property, "Duplicate Key"),
+            "23502" => new ConstraintViolationSgbdException(property, "Cannot be null"),
+            "23503" => new ConstraintViolationSgbdException(property,
+                "Entity does not exist, therefore it was not possible to establish a relationship."),
+            "23505" => new ConstraintViolationSgbdException(property, "Duplicate Key"),
             _ => new SgbdException("Database", "An unexpected error occurred", exception)
         };
     }
