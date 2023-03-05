@@ -3,7 +3,7 @@ using FradiusDomain.Admin.Entities;
 using FradiusDomain.Common.Persistence.Repository;
 using CommonInfrastructure.Persistence.DbConnection.Interfaces;
 using CommonInfrastructure.Persistence.Exceptions.Entities;
-using CommonInfrastructure.Persistence.Exceptions.Factories.Interfaces;
+using CommonInfrastructure.Persistence.Handler.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FradiusDomain.Common.Persistence;
@@ -12,12 +12,12 @@ public class DbContextDataPersistence : IDataPersistence<FradiusDbContextPersist
 {
     private readonly ISgbd _sgbd;
 
-    private readonly ISgbdExceptionFactory _exceptionFactory;
+    private readonly IHandlerPersistenceException _handlerPersistence;
 
-    public DbContextDataPersistence(ISgbd sgbd, ISgbdExceptionFactory exceptionFactory)
+    public DbContextDataPersistence(ISgbd sgbd, IHandlerPersistenceException handlerPersistence)
     {
         _sgbd = sgbd;
-        _exceptionFactory = exceptionFactory;
+        _handlerPersistence = handlerPersistence;
     }
 
     public FradiusDbContextPersistence GetRepositoryData()
@@ -27,7 +27,7 @@ public class DbContextDataPersistence : IDataPersistence<FradiusDbContextPersist
 
     public SgbdException HandlerException(Exception exceptions)
     {
-        return _exceptionFactory.Create(exceptions);
+        return _handlerPersistence.Handler(exceptions);
     }
 
     private static Action? MapperEntity(ModelBuilder modelBuilder)

@@ -1,13 +1,13 @@
 using CommonInfrastructure.Persistence.Exceptions.Entities;
-using CommonInfrastructure.Persistence.Exceptions.Factories.Interfaces;
 using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
+using CommonInfrastructure.Persistence.Handler.Interfaces;
 using Npgsql;
 
-namespace CommonInfrastructure.Persistence.Exceptions.Factories;
+namespace CommonInfrastructure.Persistence.Handler;
 
-public class PsqlSgbdExceptionFactory : ISgbdExceptionFactory
+public class PsqlHandlerPersistenceException : IHandlerPersistenceException
 {
-    public SgbdException Create(Exception exception)
+    public SgbdException Handler(Exception exception)
     {
         if (exception is not PostgresException && exception.InnerException is not PostgresException)
         {
