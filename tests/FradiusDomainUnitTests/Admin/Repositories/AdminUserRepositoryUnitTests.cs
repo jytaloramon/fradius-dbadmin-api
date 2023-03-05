@@ -1,7 +1,7 @@
+using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 using FradiusDomain.Admin.Entities;
 using FradiusDomain.Admin.Repositories;
 using FradiusDomainUnitTests.CommonUtils;
-using CommonInfrastructure.Persistence.Exceptions.IntegrityConstraint;
 
 namespace FradiusDomainUnitTests.Admin.Repositories;
 
@@ -72,12 +72,13 @@ public class AdminUserRepositoryUnitTests
         var newUserUsernameDuplicate = CreateAdminUser(newText);
         newUserUsernameDuplicate.Email = text + GenerateTestId.GenLong(GenerateTestId.LongMax);
 
-        var actualException = Assert.Throws<UniqueConstraintViolation>(() =>
+        var actualException = Assert.Throws<ConstraintViolation>(() =>
         {
             _repository.Insert(newUserUsernameDuplicate);
         });
 
         Assert.Equal("Username", actualException.Property);
+        Assert.Equal("Duplicate Key", actualException.Message);
     }
 
     [Theory]
@@ -94,12 +95,13 @@ public class AdminUserRepositoryUnitTests
         var newUserUsernameDuplicate = CreateAdminUser(newText);
         newUserUsernameDuplicate.Username = text + GenerateTestId.GenLong(GenerateTestId.LongMax);
 
-        var actualException = Assert.Throws<UniqueConstraintViolation>(() =>
+        var actualException = Assert.Throws<ConstraintViolation>(() =>
         {
             _repository.Insert(newUserUsernameDuplicate);
         });
 
         Assert.Equal("Email", actualException.Property);
+        Assert.Equal("Duplicate Key", actualException.Message);
     }
 
     [Fact]
