@@ -30,6 +30,6 @@ public interface IAdminUseCases
      * Thrown when entity has invalid properties.
      * </exception>
      */
-    public Task<AdminUser> Create(string fistName, string lastName, string username, string password, string email,
+    public Task<AdminUser> Create(string firstName, string lastName, string username, string password, string email,
         string? profileImage);
 }

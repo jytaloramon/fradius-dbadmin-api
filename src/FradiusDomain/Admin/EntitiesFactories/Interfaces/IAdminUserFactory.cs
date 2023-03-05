@@ -22,6 +22,6 @@ public interface IAdminUserFactory
      * Thrown when entity has invalid properties.
      * </exception>
      */
-    public AdminUser Create(string fistName, string lastName, string username, string password, string email,
+    public AdminUser Create(string firstName, string lastName, string username, string password, string email,
         string? profileImage, bool isActive);
 }
