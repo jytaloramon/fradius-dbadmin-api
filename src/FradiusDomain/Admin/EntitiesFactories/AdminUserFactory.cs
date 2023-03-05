@@ -14,6 +14,15 @@ public class AdminUserFactory : IAdminUserFactory
         _validator = validator;
     }
 
+    public AdminUser Create(int id)
+    {
+        var adminUser = new AdminUser { Id = id };
+
+        Validate(adminUser, "Id");
+
+        return adminUser;
+    }
+
     public AdminUser Create(string fistName, string lastName, string username, string password, string email,
         string? profileImage, bool isActive)
     {
@@ -24,17 +33,22 @@ public class AdminUserFactory : IAdminUserFactory
             Username = username,
             Password = password,
             Email = email,
-            ProfileImage = string.IsNullOrEmpty(profileImage) ? null : profileImage,
+            ProfileImage = string.IsNullOrWhiteSpace(profileImage) ? null : profileImage,
             IsActive = isActive
         };
 
-        var result = _validator.Validate(adminUser);
+        Validate(adminUser, "FirstName", "LastName", "Username", "Password", "Email", "ProfileImage");
+
+        return adminUser;
+    }
+
+    private void Validate(AdminUser adminUser, params string[] ruleSets)
+    {
+        var result = _validator.Validate(adminUser, strategy => strategy.IncludeRuleSets(ruleSets));
 
         if (!result.IsValid)
         {
             throw new EntityValidationException(result.ToDictionary());
         }
-
-        return adminUser;
     }
 }
