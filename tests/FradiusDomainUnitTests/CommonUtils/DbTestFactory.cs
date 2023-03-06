@@ -1,6 +1,6 @@
 using FradiusDomain.Common.Persistence;
 using CommonInfrastructure.Persistence.DbConnection;
-using CommonInfrastructure.Persistence.Exceptions.Factories;
+using CommonInfrastructure.Persistence.Handler;
 
 namespace FradiusDomainUnitTests.CommonUtils;
 
@@ -10,6 +10,6 @@ public static class DbTestFactory
     {
         return new DbContextDataPersistence(
             new PsqlSgbd("", "", "", ""),
-            new PsqlSgbdExceptionFactory());
+            new PsqlHandlerPersistenceException());
     }
 }
