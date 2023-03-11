@@ -1,10 +1,11 @@
 using RadiusDomain.User.Entities;
+using RadiusDomain.User.Presentation.Models;
 
 namespace RadiusDomain.User.UseCases.Interfaces;
 
 public interface IRadiusUserAttributeUseCases
 {
-    public RadiusUserAttributeGroup? GetGroupByName(string name);
+    public RadiusUserAttributeGroupRecord? GetGroupByName(string name);
 
-    public List<RadiusUserAttributeGroup> GetAllGroups();
+    public List<RadiusUserAttributeGroupRecord> GetAllGroups();
 }

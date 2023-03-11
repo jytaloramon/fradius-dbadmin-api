@@ -1,6 +1,7 @@
 using Moq;
 using RadiusDomain.User.UseCases;
 using RadiusDomain.User.Entities;
+using RadiusDomain.User.Presentation;
 using RadiusDomain.User.Repositories.Interfaces;
 
 namespace RadiusDomainUnitTests.User.UseCases;
@@ -14,7 +15,7 @@ public class RadiusUserAttributeUseCasesUnitTests
         repository.Setup(attributeRepository => attributeRepository.GetGroupByName("Group1"))
             .Returns(new RadiusUserAttributeGroup("Group1", new[] { "" }));
 
-        var userCases = new RadiusUserAttributeUseCases(repository.Object);
+        var userCases = new RadiusUserAttributeUseCases(repository.Object, new RadiusUserAttributePresentation());
 
         var actual = userCases.GetGroupByName("Group1");
 
@@ -28,7 +29,7 @@ public class RadiusUserAttributeUseCasesUnitTests
         repository.Setup(attributeRepository => attributeRepository.GetGroupByName("Group1"))
             .Returns((RadiusUserAttributeGroup?)null);
 
-        var userCases = new RadiusUserAttributeUseCases(repository.Object);
+        var userCases = new RadiusUserAttributeUseCases(repository.Object, new RadiusUserAttributePresentation());
 
         var actual = userCases.GetGroupByName("Group1");
 
@@ -42,7 +43,7 @@ public class RadiusUserAttributeUseCasesUnitTests
         repository.Setup(attributeRepository => attributeRepository.GetAllGroups())
             .Returns(new List<RadiusUserAttributeGroup>() { new RadiusUserAttributeGroup("Group1", new[] { "" }) });
 
-        var userCases = new RadiusUserAttributeUseCases(repository.Object);
+        var userCases = new RadiusUserAttributeUseCases(repository.Object, new RadiusUserAttributePresentation());
 
         var actual = userCases.GetAllGroups();
 

@@ -1,4 +1,6 @@
 using RadiusDomain.User.Entities;
+using RadiusDomain.User.Presentation.Interfaces;
+using RadiusDomain.User.Presentation.Models;
 using RadiusDomain.User.Repositories.Interfaces;
 using RadiusDomain.User.UseCases.Interfaces;
 
@@ -8,18 +10,22 @@ public class RadiusUserAttributeUseCases : IRadiusUserAttributeUseCases
 {
     private readonly IRadiusUserAttributeRepository _repository;
 
-    public RadiusUserAttributeUseCases(IRadiusUserAttributeRepository repository)
+    private readonly IRadiusUserAttributePresentation _presentation;
+
+    public RadiusUserAttributeUseCases(IRadiusUserAttributeRepository repository,
+        IRadiusUserAttributePresentation presentation)
     {
         _repository = repository;
+        _presentation = presentation;
     }
 
-    public RadiusUserAttributeGroup? GetGroupByName(string name)
+    public RadiusUserAttributeGroupRecord? GetGroupByName(string name)
     {
-        return _repository.GetGroupByName(name);
+        return _presentation.GetGroupByName(_repository.GetGroupByName(name));
     }
 
-    public List<RadiusUserAttributeGroup> GetAllGroups()
+    public List<RadiusUserAttributeGroupRecord> GetAllGroups()
     {
-        return _repository.GetAllGroups();
+        return _presentation.GetAllGroups(_repository.GetAllGroups());
     }
 }
