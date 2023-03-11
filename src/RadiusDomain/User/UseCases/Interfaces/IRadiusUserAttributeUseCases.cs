@@ -1,10 +1,10 @@
-using System.Collections.Immutable;
+using RadiusDomain.User.Entities;
 
 namespace RadiusDomain.User.UseCases.Interfaces;
 
 public interface IRadiusUserAttributeUseCases
 {
-    public ImmutableDictionary<string, string> GetAllAttributes();
-    
-    public ImmutableDictionary<string, HashSet<string>> GetAllGroups();
+    public RadiusUserAttributeGroup? GetGroupByName(string name);
+
+    public List<RadiusUserAttributeGroup> GetAllGroups();
 }
