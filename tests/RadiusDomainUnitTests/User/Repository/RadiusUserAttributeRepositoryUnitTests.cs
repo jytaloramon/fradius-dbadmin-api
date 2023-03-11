@@ -26,6 +26,29 @@ public class RadiusUserAttributeRepositoryUnitTests
     }
 
     [Fact]
+    public void GetGroupByName_NonExistentGroup_ReturnNull()
+    {
+        var repository = new RadiusUserAttributeRepository(new[] { new RadiusUserAttribute("Attr1", "Group1") });
+
+        var actualGroup = repository.GetGroupByName("AttrNonExistent");
+
+        Assert.Null(actualGroup);
+    }
+
+    [Fact]
+    public void GetGroupName_ExistentGroup_ReturnEntity()
+    {
+        var repository = new RadiusUserAttributeRepository(new[]
+        {
+            new RadiusUserAttribute("Attr1", "Group1"),
+        });
+
+        var actualGroup = repository.GetGroupByName("Group1");
+
+        Assert.NotNull(actualGroup);
+    }
+
+    [Fact]
     public void GetAllGroups_SameGroupInput_ReturnSingleList()
     {
         var repository = new RadiusUserAttributeRepository(new[]
@@ -40,7 +63,7 @@ public class RadiusUserAttributeRepositoryUnitTests
         Assert.Single(actualGroupList);
         Assert.Equal(2, actualAttrList.Attributes.Count);
     }
-    
+
     [Fact]
     public void GetAllGroups_TwoGroupInput_ReturnList()
     {

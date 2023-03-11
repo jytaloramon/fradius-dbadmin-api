@@ -21,6 +21,11 @@ public class RadiusUserAttributeRepository : IRadiusUserAttributeRepository
         return _attributes.Values.ToList();
     }
 
+    public RadiusUserAttributeGroup? GetGroupByName(string name)
+    {
+        return _groups.ContainsKey(name) ? _groups[name] : null;
+    }
+
     public List<RadiusUserAttributeGroup> GetAllGroups()
     {
         return _groups.Values.ToList();
