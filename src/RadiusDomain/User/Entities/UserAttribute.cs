@@ -6,8 +6,6 @@ public class UserAttribute
 
     public string Username { get; set; } = "";
 
-    public UserAccount? UserAccount { get; init; }
-
     public string Attribute { get; set; } = "";
 
     public string Operation { get; set; } = "";
