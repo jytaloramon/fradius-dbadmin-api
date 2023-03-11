@@ -1,7 +1,7 @@
-using RadiusDomain.User.UseCases;
 using Moq;
+using RadiusDomain.User.UseCases;
 using RadiusDomain.User.Entities;
-using RadiusDomain.User.Repository.Interfaces;
+using RadiusDomain.User.Repositories.Interfaces;
 
 namespace RadiusDomainUnitTests.User.UseCases;
 

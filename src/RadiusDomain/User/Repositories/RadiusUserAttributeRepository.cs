@@ -1,8 +1,8 @@
 using System.Collections.Immutable;
 using RadiusDomain.User.Entities;
-using RadiusDomain.User.Repository.Interfaces;
+using RadiusDomain.User.Repositories.Interfaces;
 
-namespace RadiusDomain.User.Repository;
+namespace RadiusDomain.User.Repositories;
 
 public class RadiusUserAttributeRepository : IRadiusUserAttributeRepository
 {

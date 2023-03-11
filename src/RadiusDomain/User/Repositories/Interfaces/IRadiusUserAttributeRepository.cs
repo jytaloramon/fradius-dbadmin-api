@@ -1,6 +1,6 @@
 using RadiusDomain.User.Entities;
 
-namespace RadiusDomain.User.Repository.Interfaces;
+namespace RadiusDomain.User.Repositories.Interfaces;
 
 public interface IRadiusUserAttributeRepository
 {

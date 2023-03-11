@@ -1,5 +1,5 @@
 using RadiusDomain.User.Entities;
-using RadiusDomain.User.Repository.Interfaces;
+using RadiusDomain.User.Repositories.Interfaces;
 using RadiusDomain.User.UseCases.Interfaces;
 
 namespace RadiusDomain.User.UseCases;

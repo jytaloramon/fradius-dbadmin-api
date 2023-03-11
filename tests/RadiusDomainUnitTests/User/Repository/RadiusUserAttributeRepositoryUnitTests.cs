@@ -1,5 +1,5 @@
 using RadiusDomain.User.Entities;
-using RadiusDomain.User.Repository;
+using RadiusDomain.User.Repositories;
 
 namespace RadiusDomainUnitTests.User.Repository;
 
