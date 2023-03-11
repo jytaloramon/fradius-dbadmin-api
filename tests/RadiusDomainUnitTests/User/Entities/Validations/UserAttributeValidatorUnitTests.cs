@@ -27,7 +27,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Id = id }, "Id");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Id)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Value must be greater than 0.");
     }
 
     [Theory]
@@ -47,7 +47,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Username = "" }, "Username");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Username)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Required field.");
     }
 
     [Theory]
@@ -58,7 +58,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Username = username }, "Username");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Username)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Maximum size is 64.");
     }
 
     [Theory]
@@ -72,7 +72,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Username = username }, "Username");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Username)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Invalid format.");
     }
 
     [Theory]
@@ -92,7 +92,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Attribute = "" }, "Attribute");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Attribute)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Required field.");
     }
 
     [Theory]
@@ -103,7 +103,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Attribute = attribute }, "Attribute");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Attribute)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Maximum size is 64.");
     }
 
     [Theory]
@@ -115,7 +115,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Attribute = attribute }, "Attribute");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Attribute)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Invalid format.");
     }
 
     [Theory]
@@ -135,7 +135,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Operation = "" }, "Operation");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Operation)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Required field.");
     }
 
     [Theory]
@@ -146,7 +146,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Operation = operation }, "Operation");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Operation)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Maximum size is 64.");
     }
 
     [Theory]
@@ -158,7 +158,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Operation = operation }, "Operation");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Operation)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Invalid format.");
     }
 
     [Theory]
@@ -178,7 +178,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Value = "" }, "Value");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Value)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Required field.");
     }
 
     [Theory]
@@ -189,7 +189,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Value = value }, "Value");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Value)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Maximum size is 64.");
     }
 
     [Theory]
@@ -201,7 +201,7 @@ public class UserAttributeValidatorUnitTests
         var validationResult = RunValidator(new UserAttribute { Value = value }, "Value");
 
         validationResult.ShouldHaveValidationErrorFor(userAttribute => userAttribute.Value)
-            .WithErrorMessage("Temp Message");
+            .WithErrorMessage("Invalid format.");
     }
 
     [Theory]

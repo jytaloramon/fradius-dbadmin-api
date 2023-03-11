@@ -10,39 +10,39 @@ public class UserAttributeValidator : AbstractValidator<UserAttribute>
         RuleSet("Id", () =>
         {
             RuleFor(attribute => attribute.Id)
-                .GreaterThan(0).WithMessage("Temp Message");
+                .GreaterThan(0).WithMessage("Value must be greater than 0.");
         });
 
         RuleSet("Username", () =>
         {
             RuleFor(attribute => attribute.Username)
-                .NotEmpty().WithMessage("Temp Message")
-                .MaximumLength(64).WithMessage("Temp Message")
-                .Matches(RegularExpression.Username).WithMessage("Temp Message");
+                .NotEmpty().WithMessage("Required field.")
+                .MaximumLength(64).WithMessage("Maximum size is 64.")
+                .Matches(RegularExpression.Username).WithMessage("Invalid format.");
         });
 
         RuleSet("Attribute", () =>
         {
             RuleFor(attribute => attribute.Attribute)
-                .NotEmpty().WithMessage("Temp Message")
-                .MaximumLength(64).WithMessage("Temp Message")
-                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Temp Message");
+                .NotEmpty().WithMessage("Required field.")
+                .MaximumLength(64).WithMessage("Maximum size is 64.")
+                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Invalid format.");
         });
 
         RuleSet("Operation", () =>
         {
             RuleFor(attribute => attribute.Operation)
-                .NotEmpty().WithMessage("Temp Message")
-                .MaximumLength(64).WithMessage("Temp Message")
-                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Temp Message");
+                .NotEmpty().WithMessage("Required field.")
+                .MaximumLength(64).WithMessage("Maximum size is 64.")
+                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Invalid format.");
         });
 
         RuleSet("Value", () =>
         {
             RuleFor(attribute => attribute.Value)
-                .NotEmpty().WithMessage("Temp Message")
-                .MaximumLength(64).WithMessage("Temp Message")
-                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Temp Message");
+                .NotEmpty().WithMessage("Required field.")
+                .MaximumLength(64).WithMessage("Maximum size is 64.")
+                .Matches(RegularExpression.WordWithoutWhiteSpace).WithMessage("Invalid format.");
         });
     }
 }
